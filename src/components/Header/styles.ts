@@ -42,12 +42,16 @@ export const HeaderMenu = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 6px;
+    gap: 8px;
+    transition: 0.5s;
 
     &:hover {
       color: ${(props) => props.theme['gray-800']};
       background: ${(props) => props.theme['green-300']};
-      transition: 0.3s;
+
+      svg {
+        transform: translateX(6px);
+      }
     }
   }
 
@@ -59,7 +63,6 @@ export const HeaderMenu = styled.div`
 
     &:hover {
       background: ${(props) => props.theme['green-100']};
-      transition: 0.3s;
     }
   }
 `
