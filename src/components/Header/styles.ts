@@ -59,10 +59,10 @@ export const HeaderMenu = styled.div`
 
       @keyframes icon {
         0% {
-          transform: translateX(0);
+          transform: scale(0);
         }
         100% {
-          transform: translateX(8px);
+          transform: scale(1.3);
         }
       }
     }
