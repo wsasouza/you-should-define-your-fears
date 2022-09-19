@@ -11,9 +11,10 @@ export const HeaderContainer = styled.header<{ scroll: boolean }>`
   nav {
     display: flex;
     align-items: center;
-    padding: 2rem 1rem;
+    padding: 2rem 0;
     display: flex;
     max-width: 70rem;
+    width: 100%;
     margin: 0 auto;
     justify-content: space-between;
   }
@@ -76,6 +77,12 @@ export const HeaderMenu = styled.div`
 
     &:hover {
       background: ${(props) => props.theme['green-500']};
+      box-shadow: 0 0 16px 4px rgba(196, 196, 204, 0.7);
+      color: ${(props) => props.theme['gray-100']};
+
+      svg {
+        color: ${(props) => props.theme['gray-100']};
+      }
     }
   }
 `
