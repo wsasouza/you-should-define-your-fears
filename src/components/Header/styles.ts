@@ -50,7 +50,17 @@ export const HeaderMenu = styled.div`
       background: ${(props) => props.theme['green-300']};
 
       svg {
-        transform: translateX(6px);
+        transform: scale(1.2);
+        animation: icon 0.5s;
+      }
+
+      @keyframes icon {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(6px);
+        }
       }
     }
   }
@@ -58,11 +68,12 @@ export const HeaderMenu = styled.div`
   a:last-child {
     margin-left: 1rem;
     padding: 8px 16px;
-    color: ${(props) => props.theme['green-700']};
+    width: 9rem;
+    color: ${(props) => props.theme['green-800']};
     background: ${(props) => props.theme['green-300']};
 
     &:hover {
-      background: ${(props) => props.theme['green-100']};
+      background: ${(props) => props.theme['green-500']};
     }
   }
 `

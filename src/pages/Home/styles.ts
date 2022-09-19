@@ -3,9 +3,11 @@ import styled from 'styled-components'
 export const HomeContainer = styled.main`
   display: grid;
   grid-template-columns: 2fr 1fr;
-  margin: 15rem auto 0 auto;
+  margin: 12rem auto 0 auto;
   max-width: 70rem;
-  padding: 0 1rem;
+  padding: 4rem 2rem;
+  background: ${(props) => props.theme['gray-700']};
+  border-radius: 6px;
   gap: 2rem;
 `
 
