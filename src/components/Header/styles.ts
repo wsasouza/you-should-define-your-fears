@@ -48,10 +48,12 @@ export const HeaderMenu = styled.div`
     &:hover {
       color: ${(props) => props.theme['gray-800']};
       background: ${(props) => props.theme['green-300']};
+      font-weight: bold;
 
       svg {
-        transform: scale(1.2);
-        animation: icon 0.5s;
+        color: ${(props) => props.theme['green-800']};
+        transform: scale(1.3);
+        animation: icon 0.7s;
       }
 
       @keyframes icon {
@@ -59,7 +61,7 @@ export const HeaderMenu = styled.div`
           transform: translateX(0);
         }
         100% {
-          transform: translateX(6px);
+          transform: translateX(8px);
         }
       }
     }

@@ -13,7 +13,19 @@ export function Biography() {
       <Text>
         <h1>Timothy Ferriss</h1>
         <span>Escritor</span>
-        <p></p>
+        <p>
+          Timothy Ferriss é um escritor americano, empresário, investidor anjo e
+          palestrante. Em 2007 lançou seu primeiro livro, Trabalhe 4 Horas por
+          Semana e alcançou a posição nº1 na lista de bestseller do New York
+          Times e nº1 na lista de bestsellers do jornal Wall Street Journal.
+          <a
+            href="https://en.wikipedia.org/wiki/Tim_Ferriss"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Wikipédia
+          </a>
+        </p>
       </Text>
     </BioContainer>
   )
