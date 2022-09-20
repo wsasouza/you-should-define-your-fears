@@ -8,7 +8,7 @@ interface SectionProps {
 
 export function Section({ texts, image, legend }: SectionProps) {
   const hasImage = !!image
-  console.log(hasImage)
+
   return (
     <SectionContainer hasImage={hasImage}>
       <Text>

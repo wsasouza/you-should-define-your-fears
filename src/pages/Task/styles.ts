@@ -7,4 +7,11 @@ export const TaskContainer = styled.main`
   padding: 2rem;
   background: ${(props) => props.theme['gray-700']};
   border-radius: 6px;
+
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+  }
 `
