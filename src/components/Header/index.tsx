@@ -30,7 +30,7 @@ export function Header({ scroll }: HeaderProps) {
           </NavLink>
           <NavLink to="/task" title="Tarefa">
             <Brain size={22} weight="fill" />
-            <span>Tarefa</span>
+            <span>Exercício</span>
           </NavLink>
         </HeaderMenu>
       </nav>

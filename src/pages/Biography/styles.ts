@@ -54,7 +54,7 @@ export const Text = styled.div`
 
   p {
     margin-top: 3rem;
-    line-height: 1.6;
+    line-height: 1.7;
     letter-spacing: 1px;
 
     a {

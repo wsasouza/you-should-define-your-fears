@@ -1,10 +1,15 @@
 import { Calendar } from 'phosphor-react'
+
 import author from '../../assets/tim-ferriss.jpg'
+import { Section } from './components/Section'
+
+import { article } from '../../utils/articleText'
 
 import {
   ArticleContainer,
   Author,
   AuthorContainer,
+  Content,
   DateEvent,
   Intro,
 } from './styles'
@@ -35,6 +40,18 @@ export function Article() {
           </DateEvent>
         </AuthorContainer>
       </Intro>
+      <Content>
+        {article.map((section) => {
+          return (
+            <Section
+              key={section.id}
+              texts={section.texts}
+              image={section.image}
+              legend={section.legend}
+            />
+          )
+        })}
+      </Content>
     </ArticleContainer>
   )
 }
