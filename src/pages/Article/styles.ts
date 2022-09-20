@@ -4,7 +4,7 @@ export const ArticleContainer = styled.main`
   width: 100%;
   margin: 10rem auto 3rem auto;
   max-width: 70rem;
-  padding: 4rem 0 2rem 0;
+  padding: 0 0 2rem 0;
   background: ${(props) => props.theme['gray-700']};
   border-radius: 6px;
 `
@@ -14,6 +14,7 @@ export const Intro = styled.div`
   flex-direction: column;
   background: linear-gradient(180deg, #113817 0%, #121214 100%);
   padding: 2rem 3rem;
+  border-radius: 6px;
 
   h1 {
     color: ${(props) => props.theme['pure-white']};

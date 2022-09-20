@@ -78,10 +78,10 @@ export const HeaderMenu = styled.div`
     &:hover {
       background: ${(props) => props.theme['green-500']};
       box-shadow: 0 0 16px 4px rgba(196, 196, 204, 0.7);
-      color: ${(props) => props.theme['gray-100']};
+      color: ${(props) => props.theme['green-800']};
 
       svg {
-        color: ${(props) => props.theme['gray-100']};
+        color: ${(props) => props.theme['green-800']};
       }
     }
   }
