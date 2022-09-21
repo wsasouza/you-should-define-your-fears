@@ -44,7 +44,7 @@ export const HeaderMenu = styled.div`
     align-items: center;
     justify-content: center;
     gap: 8px;
-    transition: 0.5s;
+    // transition: 0.8s;
 
     &:hover {
       color: ${(props) => props.theme['gray-800']};
@@ -77,12 +77,32 @@ export const HeaderMenu = styled.div`
 
     &:hover {
       background: ${(props) => props.theme['green-500']};
-      box-shadow: 0 0 16px 4px rgba(196, 196, 204, 0.7);
+      box-shadow: 0 0 16px 4px rgba(196, 196, 204, 0.3);
       color: ${(props) => props.theme['green-800']};
 
       svg {
         color: ${(props) => props.theme['green-800']};
       }
+    }
+  }
+
+  a.active {
+    box-shadow: 0 0 16px 4px rgba(196, 196, 204, 0.3);
+
+    span {
+      display: none;
+    }
+
+    svg {
+      transform: scale(1);
+    }
+  }
+
+  a:last-child.active {
+    box-shadow: 0 0 16px 4px rgba(196, 196, 204, 0.3);
+
+    svg {
+      transform: scale(1.2);
     }
   }
 `

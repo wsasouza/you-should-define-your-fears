@@ -10,7 +10,7 @@ export const TaskThreeDisplay = styled.div`
   align-items: center;
   justify-content: center;
   background: linear-gradient(#121214, #121214, #113817);
-  padding: 2rem 4rem;
+  padding: 2rem 4rem 8rem 4rem;
 
   h1 {
     font-family: 'Poppins', sans-serif;

@@ -4,7 +4,6 @@ export const TaskContainer = styled.main`
   width: 100%;
   margin: 10rem auto 0 auto;
   max-width: 70rem;
-  //padding: 2rem;
   background: ${(props) => props.theme['gray-700']};
   border-radius: 6px;
 
@@ -39,10 +38,20 @@ export const TaskContainer = styled.main`
         background: ${(props) => props.theme['gray-900']};
         transition: 0.3s;
 
+        span {
+          color: ${(props) => props.theme['pure-white']};
+        }
+
         svg {
           color: ${(props) => props.theme['green-300']};
           transform: scale(1);
           animation: icon 0.7s;
+        }
+
+        .active {
+          svg {
+            color: ${(props) => props.theme['green-300']};
+          }
         }
       }
 
@@ -53,6 +62,19 @@ export const TaskContainer = styled.main`
         100% {
           transform: scale(1);
         }
+      }
+    }
+
+    a.active {
+      border: 1px solid ${(props) => props.theme['gray-300']};
+
+      span {
+        color: ${(props) => props.theme['green-300']};
+      }
+
+      svg {
+        color: ${(props) => props.theme['green-300']};
+        transform: scale(1.1);
       }
     }
   }

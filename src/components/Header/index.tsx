@@ -1,5 +1,5 @@
 import { Article, Brain, House, Play } from 'phosphor-react'
-import { NavLink } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import logo from '../../assets/code-logo-cz.svg'
 
 import { HeaderContainer, HeaderMenu } from './styles'
@@ -12,11 +12,11 @@ export function Header({ scroll }: HeaderProps) {
   return (
     <HeaderContainer scroll={scroll}>
       <nav>
-        <NavLink to="/" title="Home">
+        <Link to="/" title="Home">
           <img src={logo} alt="" width={130} />
-        </NavLink>
+        </Link>
         <HeaderMenu>
-          <NavLink to="/" title="Home">
+          <NavLink end to="/" title="Home">
             <House size={22} weight="fill" />
             <span>Home</span>
           </NavLink>
