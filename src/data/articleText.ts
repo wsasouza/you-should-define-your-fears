@@ -24,7 +24,8 @@ export const article = [
   {
     id: 3,
     texts: [
-      'Mas isso é secundário e é... o estoicismo! Parece entediante, talvez pensem no Spock, ou conjurem uma imagem como esta:',
+      'Mas isso é secundário e é... o estoicismo!',
+      'Parece entediante, talvez pensem no Spock, ou conjurem uma imagem como esta:',
       'Uma vaca parada na chuva.',
       'Não está triste, nem exatamente feliz. É só uma criatura impassível aceitando o que a vida manda.',
     ],

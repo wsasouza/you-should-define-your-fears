@@ -3,7 +3,7 @@ import { Calendar } from 'phosphor-react'
 import author from '../../assets/tim-ferriss.jpg'
 import { Section } from './components/Section'
 
-import { article } from '../../utils/articleText'
+import { article } from '../../data/articleText'
 
 import {
   ArticleContainer,

@@ -53,6 +53,7 @@ export const Text = styled.div`
   }
 
   p {
+    text-align: justify;
     margin-top: 3rem;
     line-height: 1.7;
     letter-spacing: 1px;
