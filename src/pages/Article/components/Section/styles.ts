@@ -34,6 +34,7 @@ export const SectionContainer = styled.div<SectionContainerProps>`
 
 export const Text = styled.div`
   p {
+    // font-family: 'Poppins', sans-serif;
     color: ${(props) => props.theme['gray-300']};
     line-height: 1.5;
     padding-right: 2rem;

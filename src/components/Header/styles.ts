@@ -44,7 +44,6 @@ export const HeaderMenu = styled.div`
     align-items: center;
     justify-content: center;
     gap: 8px;
-    // transition: 0.8s;
 
     &:hover {
       color: ${(props) => props.theme['gray-800']};
@@ -53,7 +52,6 @@ export const HeaderMenu = styled.div`
 
       svg {
         color: ${(props) => props.theme['green-800']};
-        transform: scale(1.3);
         animation: icon 0.7s;
       }
 
