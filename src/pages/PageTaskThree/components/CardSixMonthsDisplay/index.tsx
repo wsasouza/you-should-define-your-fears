@@ -33,7 +33,7 @@ export function CardSixMonthsDisplay({
           </Dialog.Trigger>
           <NewSixMonthsModal
             setOpen={setOpen}
-            addDefineItem={addSixMonthsItem}
+            addSixMonthsItem={addSixMonthsItem}
           />
         </Dialog.Root>
       </header>
