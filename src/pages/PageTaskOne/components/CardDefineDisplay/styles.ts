@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const ContainerCardDisplay = styled.div`
+export const ContainerCardDefineDisplay = styled.div`
   background: linear-gradient(90deg, #113817 0%, #121214 100%);
   width: 100%;
   min-width: 21rem;

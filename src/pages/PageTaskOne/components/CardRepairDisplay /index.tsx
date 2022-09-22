@@ -1,28 +1,28 @@
-import { ReactNode } from 'react'
+import { ReactNode, useState } from 'react'
 import * as Dialog from '@radix-ui/react-dialog'
 import { PlusCircle } from 'phosphor-react'
 
-import { ContainerCardDisplay } from './styles'
+import { NewRepairModal } from '../NewRepairModal'
 
-interface CardDisplayProps {
+import { ContainerCardRepairDisplay } from './styles'
+
+interface CardRepairDisplayProps {
   icon: ReactNode
   title: string
   lastDate: string
-  open: boolean
-  setOpen: (state: boolean) => void
-  modal: ReactNode
+  addRepairItem: (item: string) => void
 }
 
-export function CardDisplay({
+export function CardRepairDisplay({
   icon,
   title,
   lastDate,
-  open,
-  setOpen,
-  modal,
-}: CardDisplayProps) {
+  addRepairItem,
+}: CardRepairDisplayProps) {
+  const [open, setOpen] = useState(false)
+
   return (
-    <ContainerCardDisplay>
+    <ContainerCardRepairDisplay>
       <header>
         {icon}
         <Dialog.Root open={open} onOpenChange={setOpen}>
@@ -31,11 +31,11 @@ export function CardDisplay({
               <PlusCircle size={32} weight="fill" />
             </button>
           </Dialog.Trigger>
-          {modal}
+          <NewRepairModal setOpen={setOpen} addRepairItem={addRepairItem} />
         </Dialog.Root>
       </header>
       <p>{title}</p>
       <span>{lastDate}</span>
-    </ContainerCardDisplay>
+    </ContainerCardRepairDisplay>
   )
 }

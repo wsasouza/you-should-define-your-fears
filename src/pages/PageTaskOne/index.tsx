@@ -1,15 +1,14 @@
 import { Bandaids, Crosshair, Lifebuoy } from 'phosphor-react'
 import { useEffect, useState } from 'react'
-import { useContextSelector } from 'use-context-selector'
 import { v4 as uuidv4 } from 'uuid'
 
-import { CardDisplay } from '../../components/CardDisplay'
 import { CardItem } from '../../components/CardItem'
-import { ModalContext } from '../../contexts/ModalContext'
 import { ItemCard } from '../../interfaces/itemCard'
 import { getLastItemDate } from '../../utils/getLastItemDate'
 import { initialValue } from '../../utils/initialValue'
-import { NewDefineModal } from './components/NewDefineModal'
+import { CardDefineDisplay } from './components/CardDefineDisplay'
+import { CardPreventDisplay } from './components/CardPreventDisplay'
+import { CardRepairDisplay } from './components/CardRepairDisplay '
 
 import {
   CardDisplayContainer,
@@ -64,7 +63,7 @@ export function PageTaskOne() {
     setLastRepairItemDate(getLastItemDate(repairItems))
   }, [repairItems])
 
-  function AddDefineItem(newDefineItemTitle: string) {
+  function addDefineItem(newDefineItemTitle: string) {
     const defineItemSameTitle = defineItems.find(
       (item) => item.title === newDefineItemTitle,
     )
@@ -82,7 +81,7 @@ export function PageTaskOne() {
     setDefineItems((oldState) => [...oldState, newDefineItem])
   }
 
-  function AddPreventItem(newPreventItemTitle: string) {
+  function addPreventItem(newPreventItemTitle: string) {
     const preventItemSameTitle = preventItems.find(
       (item) => item.title === newPreventItemTitle,
     )
@@ -100,7 +99,7 @@ export function PageTaskOne() {
     setPreventItems((oldState) => [...oldState, newPreventItem])
   }
 
-  function AddRepairItem(newRepairItemTitle: string) {
+  function addRepairItem(newRepairItemTitle: string) {
     const repairItemSameTitle = repairItems.find(
       (item) => item.title === newRepairItemTitle,
     )
@@ -133,41 +132,31 @@ export function PageTaskOne() {
     alert('Item na coluna Reparar foi removido com sucesso!')
   }
 
-  const open = useContextSelector(ModalContext, (context) => {
-    return context.open
-  })
-
-  const setOpen = useContextSelector(ModalContext, (context) => {
-    return context.setOpen
-  })
-
   return (
     <PageOneContainer>
       <TaskOneDisplay>
         <h1>E se eu ... ?</h1>
       </TaskOneDisplay>
       <CardDisplayContainer>
-        <CardDisplay
+        <CardDefineDisplay
           icon={<Crosshair size={32} />}
           title="Definir"
           lastDate={lastDefineItemDate}
-          open={open}
-          setOpen={setOpen}
-          modal={
-            <NewDefineModal addDefineItem={AddDefineItem} setOpen={setOpen} />
-          }
+          addDefineItem={addDefineItem}
         />
 
-        <CardDisplay
+        <CardPreventDisplay
           icon={<Lifebuoy size={32} />}
           title="Previnir"
           lastDate={lastPreventItemDate}
+          addPreventItem={addPreventItem}
         />
 
-        <CardDisplay
+        <CardRepairDisplay
           icon={<Bandaids size={32} />}
           title="Reparar"
           lastDate={lastRepairItemDate}
+          addRepairItem={addRepairItem}
         />
       </CardDisplayContainer>
       <CardItemContainer>

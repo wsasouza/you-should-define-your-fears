@@ -1,6 +1,5 @@
 import { BrowserRouter } from 'react-router-dom'
 import { ThemeProvider } from 'styled-components'
-import { ModalProvider } from './contexts/ModalContext'
 import { Router } from './Router'
 import { GlobalStyle } from './styles/global'
 
@@ -10,9 +9,7 @@ export function App() {
   return (
     <BrowserRouter>
       <ThemeProvider theme={defaultTheme}>
-        <ModalProvider>
-          <Router />
-        </ModalProvider>
+        <Router />
         <GlobalStyle />
       </ThemeProvider>
     </BrowserRouter>
