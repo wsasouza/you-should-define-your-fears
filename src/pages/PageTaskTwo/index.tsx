@@ -5,8 +5,14 @@ import { PlusCircle } from 'phosphor-react'
 import { CardItem } from '../../components/CardItem'
 import { ItemCard } from '../../interfaces/itemCard'
 import { initialValue } from '../../utils/initialValue'
+import { getLastItemDate } from '../../utils/getLastItemDate'
 
-import { CardItemContainer, PageTwoContainer, TaskDisplay } from './styles'
+import {
+  CardItemContainer,
+  PageTwoContainer,
+  TaskDisplay,
+  TaskDisplayAction,
+} from './styles'
 
 const BENEFITS_ITEMS = '@CodeTask2:benefits'
 
@@ -15,8 +21,14 @@ export function PageTaskTwo() {
     initialValue(BENEFITS_ITEMS),
   )
 
+  const [lastBenefitItemDate, setLastBenefitItemDate] = useState('')
+
   useEffect(() => {
     localStorage.setItem(BENEFITS_ITEMS, JSON.stringify(benefitsItems))
+  }, [benefitsItems])
+
+  useEffect(() => {
+    setLastBenefitItemDate(getLastItemDate(benefitsItems))
   }, [benefitsItems])
 
   function handleAddBenefitItem(newBenefitItemTitle: string) {
@@ -45,13 +57,18 @@ export function PageTaskTwo() {
   return (
     <PageTwoContainer>
       <TaskDisplay>
-        <h1>
-          Quais seriam os benefícios de uma tentativa ou de um sucesso parcial?
-        </h1>
-        <button title="Adicionar item">
-          <PlusCircle size={36} weight="fill" />
-        </button>
+        <TaskDisplayAction>
+          <h1>
+            Quais seriam os benefícios de uma tentativa ou de um sucesso
+            parcial?
+          </h1>
+          <button title="Adicionar item">
+            <PlusCircle size={36} weight="fill" />
+          </button>
+        </TaskDisplayAction>
+        <span>{lastBenefitItemDate}</span>
       </TaskDisplay>
+
       <CardItemContainer>
         <CardItem />
       </CardItemContainer>
