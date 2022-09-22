@@ -30,6 +30,8 @@ export const TaskDisplayAction = styled.div`
   padding: 0 4rem;
 
   h1 {
+    display: flex;
+    align-items: start;
     font-family: 'Poppins', sans-serif;
     color: ${(props) => props.theme['gray-300']};
   }

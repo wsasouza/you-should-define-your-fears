@@ -5,7 +5,7 @@ interface SectionContainerProps {
 }
 
 export const SectionContainer = styled.div<SectionContainerProps>`
-  margin: 1rem 0;
+  margin: 0.5rem 0;
   display: grid;
 
   ${(props) =>

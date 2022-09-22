@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { v4 as uuidv4 } from 'uuid'
-import { PlusCircle } from 'phosphor-react'
+import * as Dialog from '@radix-ui/react-dialog'
+import { Asterisk, PlusCircle } from 'phosphor-react'
 
 import { CardItem } from '../../components/CardItem'
 import { ItemCard } from '../../interfaces/itemCard'
@@ -13,6 +14,7 @@ import {
   TaskDisplay,
   TaskDisplayAction,
 } from './styles'
+import { NewBenefitModal } from './components/NewBenefitModal'
 
 const BENEFITS_ITEMS = '@CodeTask2:benefits'
 
@@ -20,6 +22,8 @@ export function PageTaskTwo() {
   const [benefitsItems, setBenefitsItems] = useState<ItemCard[]>(
     initialValue(BENEFITS_ITEMS),
   )
+
+  const [open, setOpen] = useState(false)
 
   const [lastBenefitItemDate, setLastBenefitItemDate] = useState('')
 
@@ -31,7 +35,7 @@ export function PageTaskTwo() {
     setLastBenefitItemDate(getLastItemDate(benefitsItems))
   }, [benefitsItems])
 
-  function handleAddBenefitItem(newBenefitItemTitle: string) {
+  function addBenefitItem(newBenefitItemTitle: string) {
     const benefitItemSameTitle = benefitsItems.find(
       (item) => item.title === newBenefitItemTitle,
     )
@@ -59,12 +63,21 @@ export function PageTaskTwo() {
       <TaskDisplay>
         <TaskDisplayAction>
           <h1>
+            <Asterisk size={32} />
             Quais seriam os benefícios de uma tentativa ou de um sucesso
             parcial?
           </h1>
-          <button title="Adicionar item">
-            <PlusCircle size={36} weight="fill" />
-          </button>
+          <Dialog.Root open={open} onOpenChange={setOpen}>
+            <Dialog.Trigger asChild>
+              <button title="Adicionar item">
+                <PlusCircle size={36} weight="fill" />
+              </button>
+            </Dialog.Trigger>
+            <NewBenefitModal
+              setOpen={setOpen}
+              addBenefitItem={addBenefitItem}
+            />
+          </Dialog.Root>
         </TaskDisplayAction>
         <span>{lastBenefitItemDate}</span>
       </TaskDisplay>
