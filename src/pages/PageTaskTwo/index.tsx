@@ -54,7 +54,7 @@ export function PageTaskTwo() {
   }
 
   function handleRemoveBenefitItem(id: string) {
-    setBenefitsItems((oldState) => oldState.filter((item) => item.id === id))
+    setBenefitsItems((oldState) => oldState.filter((item) => item.id !== id))
     alert('Item na coluna Benefícios foi removido com sucesso!')
   }
 
@@ -83,7 +83,16 @@ export function PageTaskTwo() {
       </TaskDisplay>
 
       <CardItemContainer>
-        <CardItem />
+        {benefitsItems.map((item, index) => {
+          return (
+            <CardItem
+              key={item.id}
+              item={item}
+              order={index + 1}
+              removeCard={handleRemoveBenefitItem}
+            />
+          )
+        })}
       </CardItemContainer>
     </PageTwoContainer>
   )

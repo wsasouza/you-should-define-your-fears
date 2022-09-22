@@ -117,19 +117,19 @@ export function PageTaskOne() {
     setRepairItems((oldState) => [...oldState, newRepairItem])
   }
 
-  function handleRemoveDefineItem(id: string) {
-    setDefineItems((oldState) => oldState.filter((item) => item.id === id))
-    alert('Item na coluna Definir foi removido com sucesso!')
+  async function handleRemoveDefineItem(id: string) {
+    setDefineItems((oldState) => oldState.filter((item) => item.id !== id))
+    // alert('Item na coluna Definir foi removido com sucesso!')
   }
 
-  function handleRemovePreventItem(id: string) {
-    setPreventItems((oldState) => oldState.filter((item) => item.id === id))
-    alert('Item na coluna Prevenir foi removido com sucesso!')
+  async function handleRemovePreventItem(id: string) {
+    setPreventItems((oldState) => oldState.filter((item) => item.id !== id))
+    // alert('Item na coluna Prevenir foi removido com sucesso!')
   }
 
   function handleRemoveRepairItem(id: string) {
-    setRepairItems((oldState) => oldState.filter((item) => item.id === id))
-    alert('Item na coluna Reparar foi removido com sucesso!')
+    setRepairItems((oldState) => oldState.filter((item) => item.id !== id))
+    // alert('Item na coluna Reparar foi removido com sucesso!')
   }
 
   return (
@@ -161,13 +161,40 @@ export function PageTaskOne() {
       </CardDisplayContainer>
       <CardItemContainer>
         <CardItemDefine>
-          <CardItem />
+          {defineItems.map((item, index) => {
+            return (
+              <CardItem
+                key={item.id}
+                item={item}
+                order={index + 1}
+                removeCard={handleRemoveDefineItem}
+              />
+            )
+          })}
         </CardItemDefine>
         <CardItemPrevent>
-          <CardItem />
+          {preventItems.map((item, index) => {
+            return (
+              <CardItem
+                key={item.id}
+                item={item}
+                order={index + 1}
+                removeCard={handleRemovePreventItem}
+              />
+            )
+          })}
         </CardItemPrevent>
         <CardItemRepair>
-          <CardItem />
+          {repairItems.map((item, index) => {
+            return (
+              <CardItem
+                key={item.id}
+                item={item}
+                order={index + 1}
+                removeCard={handleRemoveRepairItem}
+              />
+            )
+          })}
         </CardItemRepair>
       </CardItemContainer>
     </PageOneContainer>

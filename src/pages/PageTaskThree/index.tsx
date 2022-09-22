@@ -123,17 +123,17 @@ export function PageTaskThree() {
   }
 
   function handleRemoveSixMonthsItem(id: string) {
-    setSixMonthsItems((oldState) => oldState.filter((item) => item.id === id))
+    setSixMonthsItems((oldState) => oldState.filter((item) => item.id !== id))
     alert('Item na coluna de 6 meses foi removido com sucesso!')
   }
 
   function handleRemoveOneYearItem(id: string) {
-    setOneYearItems((oldState) => oldState.filter((item) => item.id === id))
+    setOneYearItems((oldState) => oldState.filter((item) => item.id !== id))
     alert('Item na coluna de 1 ano foi removido com sucesso!')
   }
 
   function handleRemoveThreeYearsItem(id: string) {
-    setThreeYearsItems((oldState) => oldState.filter((item) => item.id === id))
+    setThreeYearsItems((oldState) => oldState.filter((item) => item.id !== id))
     alert('Item na coluna de 3 anos foi removido com sucesso!')
   }
 
@@ -169,13 +169,40 @@ export function PageTaskThree() {
       </CardDisplayContainer>
       <CardItemContainer>
         <CardItemSixMonths>
-          <h2>Card Item</h2>
+          {sixMonthsItems.map((item, index) => {
+            return (
+              <CardItem
+                key={item.id}
+                item={item}
+                order={index + 1}
+                removeCard={handleRemoveSixMonthsItem}
+              />
+            )
+          })}
         </CardItemSixMonths>
         <CardItemOneYear>
-          <h2>Card Item</h2>
+          {oneYearItems.map((item, index) => {
+            return (
+              <CardItem
+                key={item.id}
+                item={item}
+                order={index + 1}
+                removeCard={handleRemoveOneYearItem}
+              />
+            )
+          })}
         </CardItemOneYear>
         <CardItemThreeYears>
-          <h2>Card Item</h2>
+          {threeYearsItems.map((item, index) => {
+            return (
+              <CardItem
+                key={item.id}
+                item={item}
+                order={index + 1}
+                removeCard={handleRemoveThreeYearsItem}
+              />
+            )
+          })}
         </CardItemThreeYears>
       </CardItemContainer>
     </PageThreeContainer>

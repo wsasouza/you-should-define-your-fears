@@ -6,6 +6,12 @@ export const CardItemContainer = styled.div`
   padding: 1rem;
   min-width: 21rem;
 
+  transition: 0.5s;
+
+  &:hover {
+    box-shadow: 0 0 16px 4px rgba(196, 196, 204, 0.3);
+  }
+
   header {
     display: flex;
     align-items: center;

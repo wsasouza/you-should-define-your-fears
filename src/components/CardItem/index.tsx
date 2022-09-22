@@ -1,21 +1,45 @@
+import { format, formatDistanceToNow } from 'date-fns'
+import ptBR from 'date-fns/locale/pt-BR'
 import { Trash } from 'phosphor-react'
+
+import { ItemCard } from '../../interfaces/itemCard'
+
 import { CardItemContainer } from './styles'
 
-export function CardItem() {
+interface CardItemProps {
+  item: ItemCard
+  order: number
+  removeCard: (id: string) => void
+}
+
+export function CardItem({ item, order, removeCard }: CardItemProps) {
+  const createdDateFormatted = format(
+    item.createdAt,
+    "d 'de' LLLL 'às' HH:mm'h'",
+    { locale: ptBR },
+  )
+
+  const createdDateRelativeToNow = formatDistanceToNow(item.createdAt, {
+    locale: ptBR,
+    addSuffix: true,
+  })
+
   return (
     <CardItemContainer>
       <header>
-        <span>1</span>
-        <button>
+        <span>{order}</span>
+        <button onClick={() => removeCard(item.id)} title="Apagar item">
           <Trash size={20} />
         </button>
       </header>
-      <p>
-        O meu maior medo é não conseguir uma carreira como dev. Então deve
-        acontecer algo que eu não entende.
-      </p>
+      <p>{item.title}</p>
       <footer>
-        <span>Há cerca de 5 minutos</span>
+        <time
+          title={createdDateFormatted}
+          dateTime={item.createdAt.toISOString()}
+        >
+          {createdDateRelativeToNow}
+        </time>
       </footer>
     </CardItemContainer>
   )
