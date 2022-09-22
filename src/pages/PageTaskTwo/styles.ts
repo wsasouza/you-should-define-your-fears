@@ -24,5 +24,17 @@ export const TaskDisplay = styled.div`
     svg {
       color: ${(props) => props.theme['green-300']};
     }
+
+    &:hover {
+      svg {
+        transform: scale(1.3);
+      }
+    }
   }
+`
+
+export const CardItemContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin: -3.5rem 1rem 2rem 1rem;
 `

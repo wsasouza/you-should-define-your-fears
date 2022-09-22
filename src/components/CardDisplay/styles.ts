@@ -4,7 +4,7 @@ export const ContainerCardDisplay = styled.div`
   background: linear-gradient(90deg, #113817 0%, #121214 100%);
   width: 100%;
   min-width: 21rem;
-  padding: 2rem;
+  padding: 1rem 2rem;
   border-radius: 6px;
 
   header {

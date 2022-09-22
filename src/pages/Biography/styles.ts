@@ -37,6 +37,7 @@ export const Text = styled.div`
   }
 
   span {
+    font-family: 'Poppins', sans-serif;
     font-size: 1.125rem;
     display: block;
     margin-top: 0.2rem;
