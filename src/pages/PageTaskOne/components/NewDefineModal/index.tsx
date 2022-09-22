@@ -35,7 +35,7 @@ export function NewDefineModal({ setOpen, addDefineItem }: NewItemModalProps) {
       <Content>
         <Title>
           <Crosshair size={32} />
-          <span>Novo item</span>
+          <span>Definir</span>
         </Title>
         <CloseButton asChild onClick={() => reset()}>
           <X size={24} />
@@ -43,7 +43,7 @@ export function NewDefineModal({ setOpen, addDefineItem }: NewItemModalProps) {
 
         <form onSubmit={handleSubmit(handleNewDefineItem)}>
           <textarea
-            placeholder="Defina o seu medo"
+            placeholder="Escreva tudo de pior que pode imaginar acontecer se tomar essa decisão..."
             rows={5}
             {...register('title')}
             required

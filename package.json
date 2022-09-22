@@ -18,9 +18,7 @@
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.36.0",
     "react-router-dom": "^6.4.0",
-    "scheduler": "^0.23.0",
     "styled-components": "^5.3.5",
-    "use-context-selector": "^1.4.1",
     "uuid": "^9.0.0",
     "zod": "^3.19.1"
   },

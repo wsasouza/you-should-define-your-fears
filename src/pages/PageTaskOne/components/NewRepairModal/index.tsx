@@ -36,7 +36,7 @@ export function NewRepairModal({ setOpen, addRepairItem }: NewItemModalProps) {
       <Content>
         <Title>
           <Bandaids size={32} />
-          <span>Novo item</span>
+          <span>Reparar</span>
         </Title>
         <CloseButton asChild onClick={() => reset()}>
           <X size={24} />
@@ -44,7 +44,7 @@ export function NewRepairModal({ setOpen, addRepairItem }: NewItemModalProps) {
 
         <form onSubmit={handleSubmit(handleNewRepairItem)}>
           <textarea
-            placeholder="Defina o seu medo"
+            placeholder="Se acontecer o pior, o que posso fazer para reparar um pouco o dano, ou a quem posso pedir ajuda..."
             rows={5}
             {...register('title')}
             required

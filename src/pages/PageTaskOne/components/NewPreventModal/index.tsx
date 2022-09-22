@@ -38,7 +38,7 @@ export function NewPreventModal({
       <Content>
         <Title>
           <Lifebuoy size={32} />
-          <span>Novo item</span>
+          <span>Previnir</span>
         </Title>
         <CloseButton asChild onClick={() => reset()}>
           <X size={24} />
@@ -46,7 +46,7 @@ export function NewPreventModal({
 
         <form onSubmit={handleSubmit(handleNewPreventItem)}>
           <textarea
-            placeholder="Defina o seu medo"
+            placeholder="O que posso fazer para impedir que essas coisas aconteçam ou, pelo menos, diminuir um pouco a probabilidade..."
             rows={5}
             {...register('title')}
             required
