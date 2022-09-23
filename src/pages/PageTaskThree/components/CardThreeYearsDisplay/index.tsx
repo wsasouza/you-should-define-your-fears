@@ -27,7 +27,7 @@ export function CardThreeYearsDisplay({
         {icon}
         <Dialog.Root open={open} onOpenChange={setOpen}>
           <Dialog.Trigger asChild>
-            <button>
+            <button title="Adicionar item">
               <PlusCircle size={32} weight="fill" />
             </button>
           </Dialog.Trigger>

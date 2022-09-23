@@ -6,6 +6,7 @@ import {
   HourglassLow,
   HourglassMedium,
 } from 'phosphor-react'
+import { toast } from 'react-toastify'
 
 import { CardItem } from '../../components/CardItem'
 import { ItemCard } from '../../interfaces/itemCard'
@@ -74,7 +75,8 @@ export function PageTaskThree() {
     )
 
     if (sixMonthsItemSameTitle) {
-      alert('Este item já existe na coluna de 6 meses.')
+      toast.warning('Este item já existe na coluna 6 meses.')
+      return
     }
 
     const newSixMonthsItem = {
@@ -84,6 +86,7 @@ export function PageTaskThree() {
     }
 
     setSixMonthsItems((oldState) => [...oldState, newSixMonthsItem])
+    toast.success('Item adicionado na tabela 6 meses.')
   }
 
   function addOneYearItem(newOneYearItemTitle: string) {
@@ -92,7 +95,8 @@ export function PageTaskThree() {
     )
 
     if (oneYearItemSameTitle) {
-      alert('Este item já existe na coluna de 1 ano.')
+      toast.warning('Este item já existe na coluna 1 ano.')
+      return
     }
 
     const newOneYearItem = {
@@ -102,6 +106,7 @@ export function PageTaskThree() {
     }
 
     setOneYearItems((oldState) => [...oldState, newOneYearItem])
+    toast.success('Item adicionado na tabela 1 ano.')
   }
 
   function addThreeYearsItem(newThreeYearsItemTitle: string) {
@@ -110,7 +115,8 @@ export function PageTaskThree() {
     )
 
     if (threeYearsItemSameTitle) {
-      alert('Este item já existe na coluna de 3 anos.')
+      toast.warning('Este item já existe na coluna 3 anos.')
+      return
     }
 
     const newThreeYearsItem = {
@@ -120,21 +126,22 @@ export function PageTaskThree() {
     }
 
     setThreeYearsItems((oldState) => [...oldState, newThreeYearsItem])
+    toast.success('Item adicionado na tabela 3 anos.')
   }
 
   function handleRemoveSixMonthsItem(id: string) {
     setSixMonthsItems((oldState) => oldState.filter((item) => item.id !== id))
-    alert('Item na coluna de 6 meses foi removido com sucesso!')
+    toast.info('Item na coluna 6 meses foi removido com sucesso.')
   }
 
   function handleRemoveOneYearItem(id: string) {
     setOneYearItems((oldState) => oldState.filter((item) => item.id !== id))
-    alert('Item na coluna de 1 ano foi removido com sucesso!')
+    toast.info('Item na coluna 1 ano foi removido com sucesso.')
   }
 
   function handleRemoveThreeYearsItem(id: string) {
     setThreeYearsItems((oldState) => oldState.filter((item) => item.id !== id))
-    alert('Item na coluna de 3 anos foi removido com sucesso!')
+    toast.info('Item na coluna 3 anos foi removido com sucesso.')
   }
 
   return (

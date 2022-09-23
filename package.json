@@ -19,6 +19,7 @@
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.36.0",
     "react-router-dom": "^6.4.0",
+    "react-toastify": "^9.0.8",
     "styled-components": "^5.3.5",
     "uuid": "^9.0.0",
     "zod": "^3.19.1"

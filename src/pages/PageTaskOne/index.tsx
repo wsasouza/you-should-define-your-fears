@@ -1,6 +1,7 @@
 import { Bandaids, Crosshair, Lifebuoy } from 'phosphor-react'
 import { useEffect, useState } from 'react'
 import { v4 as uuidv4 } from 'uuid'
+import { toast } from 'react-toastify'
 
 import { CardItem } from '../../components/CardItem'
 import { ItemCard } from '../../interfaces/itemCard'
@@ -69,7 +70,8 @@ export function PageTaskOne() {
     )
 
     if (defineItemSameTitle) {
-      alert('Este item já existe na coluna Definir.')
+      toast.warning('Este item já existe na coluna Definir.')
+      return
     }
 
     const newDefineItem = {
@@ -79,6 +81,7 @@ export function PageTaskOne() {
     }
 
     setDefineItems((oldState) => [...oldState, newDefineItem])
+    toast.success('Item adicionado na tabela Definir')
   }
 
   function addPreventItem(newPreventItemTitle: string) {
@@ -87,7 +90,8 @@ export function PageTaskOne() {
     )
 
     if (preventItemSameTitle) {
-      alert('Este item já existe na coluna Prevenir.')
+      toast.warning('Este item já existe na coluna Previnir.')
+      return
     }
 
     const newPreventItem = {
@@ -97,6 +101,7 @@ export function PageTaskOne() {
     }
 
     setPreventItems((oldState) => [...oldState, newPreventItem])
+    toast.success('Item adicionado na tabela Previnir')
   }
 
   function addRepairItem(newRepairItemTitle: string) {
@@ -105,7 +110,8 @@ export function PageTaskOne() {
     )
 
     if (repairItemSameTitle) {
-      alert('Este item já existe na coluna Reparar.')
+      toast.warning('Este item já existe na coluna Reparar.')
+      return
     }
 
     const newRepairItem = {
@@ -115,21 +121,22 @@ export function PageTaskOne() {
     }
 
     setRepairItems((oldState) => [...oldState, newRepairItem])
+    toast.success('Item adicionado na tabela Reparar')
   }
 
   async function handleRemoveDefineItem(id: string) {
     setDefineItems((oldState) => oldState.filter((item) => item.id !== id))
-    // alert('Item na coluna Definir foi removido com sucesso!')
+    toast.info('Item na coluna Definir foi removido com sucesso.')
   }
 
   async function handleRemovePreventItem(id: string) {
     setPreventItems((oldState) => oldState.filter((item) => item.id !== id))
-    // alert('Item na coluna Prevenir foi removido com sucesso!')
+    toast.info('Item na coluna Previnir foi removido com sucesso.')
   }
 
   function handleRemoveRepairItem(id: string) {
     setRepairItems((oldState) => oldState.filter((item) => item.id !== id))
-    // alert('Item na coluna Reparar foi removido com sucesso!')
+    toast.info('Item na coluna Reparar foi removido com sucesso.')
   }
 
   return (

@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { v4 as uuidv4 } from 'uuid'
 import * as Dialog from '@radix-ui/react-dialog'
 import { Asterisk, PlusCircle } from 'phosphor-react'
+import { toast } from 'react-toastify'
 
 import { CardItem } from '../../components/CardItem'
 import { ItemCard } from '../../interfaces/itemCard'
@@ -41,7 +42,8 @@ export function PageTaskTwo() {
     )
 
     if (benefitItemSameTitle) {
-      alert('Este item já existe na coluna de Benefícios.')
+      toast.warning('Este item já existe na coluna Benefícios.')
+      return
     }
 
     const newBenefitItem = {
@@ -51,11 +53,12 @@ export function PageTaskTwo() {
     }
 
     setBenefitsItems((oldState) => [...oldState, newBenefitItem])
+    toast.success('Item adicionado na tabela Benefícios.')
   }
 
   function handleRemoveBenefitItem(id: string) {
     setBenefitsItems((oldState) => oldState.filter((item) => item.id !== id))
-    alert('Item na coluna Benefícios foi removido com sucesso!')
+    toast.info('Item na coluna Benefícios foi removido com sucesso.')
   }
 
   return (
