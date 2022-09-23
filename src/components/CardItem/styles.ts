@@ -10,7 +10,7 @@ export const CardItemContainer = styled.div`
   transition: 0.5s;
 
   &:hover {
-    box-shadow: 0 0 16px 4px rgba(196, 196, 204, 0.3);
+    box-shadow: 0 0 14px 1px rgba(196, 196, 204, 0.4);
   }
 
   header {
@@ -20,9 +20,16 @@ export const CardItemContainer = styled.div`
 
     span {
       font-size: 1.5rem;
-      font-weight: bold;
       font-family: 'Poppins' sans-serif;
       color: ${(props) => props.theme['green-300']};
+
+      &::after {
+        content: '.';
+        display: inline-block;
+        font-size: 3rem;
+        line-height: 0.5rem;
+        color: ${(props) => props.theme['green-300']};
+      }
     }
 
     button {
