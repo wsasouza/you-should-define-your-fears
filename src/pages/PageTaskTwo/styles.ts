@@ -57,4 +57,5 @@ export const CardItemContainer = styled.div`
   display: flex;
   flex-direction: column;
   margin: 1rem 1rem 2rem 1rem;
+  gap: 1rem;
 `
