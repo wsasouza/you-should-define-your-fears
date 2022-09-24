@@ -24,8 +24,7 @@
 
 <h4 align="center"> 
 	🚧  
-  You Should Define Your Fears 🚀 
-  Working to make the application responsive...  
+  Bug🪲: Working to fix error Page 404 when refreshing ...  
   🚧
 </h4>
 
