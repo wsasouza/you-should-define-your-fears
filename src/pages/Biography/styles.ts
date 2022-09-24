@@ -17,6 +17,13 @@ export const BioContainer = styled.main`
     height: 100%;
     object-fit: cover;
   }
+
+  @media (max-width: 940px) {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 3rem;
+    padding: 2rem 1.5rem;
+  }
 `
 
 export const Text = styled.div`
@@ -79,6 +86,14 @@ export const Text = styled.div`
       &:hover::after {
         width: 100%;
       }
+    }
+  }
+
+  @media (max-width: 940px) {
+    padding: 0;
+
+    p {
+      text-align: justify;
     }
   }
 `

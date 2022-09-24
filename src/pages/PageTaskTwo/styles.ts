@@ -21,6 +21,20 @@ export const TaskDisplay = styled.div`
     font-size: 0.875rem;
     color: ${(props) => props.theme['gray-400']};
   }
+
+  @media (max-width: 750px) {
+    span {
+      padding: 1rem 2rem 0 2rem;
+      text-align: center;
+    }
+  }
+
+  @media (max-width: 600px) {
+    span {
+      padding: 1rem 1.5rem 0 1.5rem;
+      text-align: center;
+    }
+  }
 `
 
 export const TaskDisplayAction = styled.div`
@@ -28,6 +42,7 @@ export const TaskDisplayAction = styled.div`
   align-items: center;
   justify-content: center;
   padding: 0 4rem;
+  gap: 1rem;
 
   h1 {
     display: flex;
@@ -49,6 +64,22 @@ export const TaskDisplayAction = styled.div`
       svg {
         transform: scale(1.3);
       }
+    }
+  }
+
+  @media (max-width: 750px) {
+    padding: 0 2rem;
+
+    h1 {
+      font-size: 1.5rem;
+    }
+  }
+
+  @media (max-width: 600px) {
+    padding: 0 1.5rem;
+
+    h1 {
+      font-size: 1.125rem;
     }
   }
 `

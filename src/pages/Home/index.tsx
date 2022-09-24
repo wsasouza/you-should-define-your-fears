@@ -9,7 +9,7 @@ export function Home() {
         <h1>Por que você deve definir seus medos em vez de seus objetivos</h1>
         <NavLink to="/biography">Tim Ferriss</NavLink>
       </Text>
-      <img src={illustration} alt="" width={400} />
+      <img src={illustration} alt="" />
     </HomeContainer>
   )
 }

@@ -27,6 +27,19 @@ export const TaskThreeDisplay = styled.div`
     color: ${(props) => props.theme['gray-400']};
     font-size: 1.5rem;
   }
+
+  @media (max-width: 750px) {
+    padding: 2rem 1.5rem 8rem 1.5rem;
+
+    h1 {
+      font-size: 1.5rem;
+    }
+
+    span {
+      font-size: 1rem;
+      text-align: center;
+    }
+  }
 `
 
 export const CardDisplayContainer = styled.div`
@@ -35,9 +48,9 @@ export const CardDisplayContainer = styled.div`
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
   margin: -5.5rem auto;
   gap: 1rem;
+  overflow-x: auto;
 `
 
 export const CardItemContainer = styled.div`
@@ -45,18 +58,19 @@ export const CardItemContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
+  overflow-x: auto;
 `
 
 export const CardItemSixMonths = styled.div`
   grid-column: 1;
   display: grid;
-  height: 2rem;
+  min-height: 2rem;
   gap: 0.875rem;
 `
 
 export const CardItemOneYear = styled.div`
   display: grid;
-  height: 2rem;
+  min-height: 2rem;
   grid-column: 2;
   gap: 0.875rem;
 `
@@ -64,6 +78,6 @@ export const CardItemOneYear = styled.div`
 export const CardItemThreeYears = styled.div`
   display: grid;
   grid-column: 3;
-  height: 2rem;
+  min-height: 2rem;
   gap: 0.875rem;
 `

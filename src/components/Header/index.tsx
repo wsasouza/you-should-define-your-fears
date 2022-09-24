@@ -1,14 +1,19 @@
-import { Article, Brain, House, Play } from 'phosphor-react'
+import { Article, Brain, DotsThreeCircle, House, Play, X } from 'phosphor-react'
+import { useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import logo from '../../assets/code-logo-cz.svg'
+import { NavMobile } from '../NavMobile'
 
-import { HeaderContainer, HeaderMenu } from './styles'
+import { HeaderContainer, HeaderMenu, MenuMobile } from './styles'
 
 interface HeaderProps {
   scroll: boolean
 }
 
 export function Header({ scroll }: HeaderProps) {
+  const [isOpen, setIsOpen] = useState(false)
+  const toggle = () => setIsOpen(!isOpen)
+
   return (
     <HeaderContainer scroll={scroll}>
       <nav>
@@ -33,7 +38,13 @@ export function Header({ scroll }: HeaderProps) {
             <span>Exercício</span>
           </NavLink>
         </HeaderMenu>
+        <MenuMobile>
+          <button onClick={toggle}>
+            {isOpen ? <X size={40} /> : <DotsThreeCircle size={40} />}
+          </button>
+        </MenuMobile>
       </nav>
+      {isOpen && <NavMobile setOpen={setIsOpen} />}
     </HeaderContainer>
   )
 }

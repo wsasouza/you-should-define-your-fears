@@ -78,4 +78,11 @@ export const TaskContainer = styled.main`
       }
     }
   }
+
+  @media (max-width: 940px) {
+    nav {
+      padding: 1rem;
+      gap: 0.5rem;
+    }
+  }
 `

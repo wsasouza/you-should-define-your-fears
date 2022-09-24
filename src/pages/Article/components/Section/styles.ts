@@ -30,6 +30,16 @@ export const SectionContainer = styled.div<SectionContainerProps>`
     font-weight: bold;
     font-size: 0.875rem;
   }
+
+  @media (max-width: 940px) {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    img {
+      width: 70%;
+    }
+  }
 `
 
 export const Text = styled.div`
@@ -42,5 +52,11 @@ export const Text = styled.div`
     line-height: 1.7;
     text-align: justify;
     font-size: 1.125rem;
+  }
+
+  @media (max-width: 940px) {
+    p {
+      padding-right: 0;
+    }
   }
 `

@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const ArticleContainer = styled.main`
   width: 100%;
   margin: 10rem auto 3rem auto;
-  max-width: 70rem;
+  max-width: 72rem;
   padding: 0 0 2rem 0;
   background: ${(props) => props.theme['gray-700']};
   border-radius: 6px;
@@ -34,6 +34,7 @@ export const Intro = styled.div`
 
   p {
     margin-top: 2rem;
+    text-align: justify;
     font-family: 'Poppins', sans-serif;
     font-size: 1.125rem;
     color: ${(props) => props.theme['gray-300']};
@@ -52,6 +53,15 @@ export const Intro = styled.div`
       background: ${(props) => props.theme['green-300']};
     }
   }
+
+  @media (max-width: 940px) {
+    padding: 2rem 1.5rem;
+
+    h1 {
+      font-size: 2.5rem;
+      padding: 0 1rem;
+    }
+  }
 `
 
 export const AuthorContainer = styled.div`
@@ -60,6 +70,14 @@ export const AuthorContainer = styled.div`
   align-items: center;
   margin-top: 1.5rem;
   padding: 0 2rem;
+
+  @media (max-width: 940px) {
+    padding: 2rem 1rem;
+  }
+
+  @media (max-width: 600px) {
+    padding: 2rem 0;
+  }
 `
 
 export const Author = styled.div`
@@ -93,4 +111,9 @@ export const Content = styled.div`
   display: flex;
   flex-direction: column;
   padding: 4rem;
+
+  @media (max-width: 940px) {
+    padding: 1.5rem;
+    gap: 1rem;
+  }
 `

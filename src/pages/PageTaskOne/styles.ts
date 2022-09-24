@@ -23,9 +23,9 @@ export const CardDisplayContainer = styled.div`
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
   margin: -5.5rem auto;
   gap: 1rem;
+  overflow-x: auto;
 `
 
 export const CardItemContainer = styled.div`
@@ -33,18 +33,19 @@ export const CardItemContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
+  overflow-x: auto;
 `
 
 export const CardItemDefine = styled.div`
   grid-column: 1;
   display: grid;
-  height: 2rem;
+  min-height: 2rem;
   gap: 0.875rem;
 `
 
 export const CardItemPrevent = styled.div`
   display: grid;
-  height: 2rem;
+  min-height: 2rem;
   grid-column: 2;
   gap: 0.875rem;
 `
@@ -52,6 +53,6 @@ export const CardItemPrevent = styled.div`
 export const CardItemRepair = styled.div`
   display: grid;
   grid-column: 3;
-  height: 2rem;
+  min-height: 2rem;
   gap: 0.875rem;
 `

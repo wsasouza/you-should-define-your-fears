@@ -1,43 +1,22 @@
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 
-export const HeaderContainer = styled.header<{ scroll: boolean }>`
-  position: fixed;
+export const NavMobileContainer = styled.aside`
   width: 100%;
-  z-index: 2;
-  transition: 0.5s;
-
-  ${(props) => props.scroll && scrollStyle};
-
-  nav {
-    display: flex;
-    align-items: center;
-    padding: 2rem 1rem;
-    display: flex;
-    max-width: 72rem;
-    width: 100%;
-    margin: 0 auto;
-    justify-content: space-between;
-  }
-`
-
-const scrollStyle = css`
   background: rgba(15, 15, 15, 0.35);
   box-shadow: 0 8px 32px 0 rgba(196, 196, 204, 0.15);
   backdrop-filter: blur(13.5px);
   border: 1px solid rgba(10, 10, 10, 0.18);
-`
-
-export const HeaderMenu = styled.div`
   display: flex;
-  align-items: center;
-  gap: 1.2rem;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 4rem;
 
   a {
     color: ${(props) => props.theme['green-300']};
     background: ${(props) => props.theme['gray-800']};
     border: 1px solid ${(props) => props.theme['green-300']};
-    width: 8rem;
-    padding: 4px 8px;
+    width: 100%;
+    padding: 0.5rem 1rem;
     border-radius: 6px;
 
     display: flex;
@@ -67,9 +46,9 @@ export const HeaderMenu = styled.div`
   }
 
   a:last-child {
-    margin-left: 1rem;
+    margin: 4rem 0;
     padding: 8px 16px;
-    width: 9rem;
+    width: 100%;
     color: ${(props) => props.theme['green-800']};
     background: ${(props) => props.theme['green-300']};
 
@@ -102,27 +81,5 @@ export const HeaderMenu = styled.div`
     svg {
       transform: scale(1.2);
     }
-  }
-
-  @media (max-width: 940px) {
-    display: none;
-  }
-`
-
-export const MenuMobile = styled.div`
-  display: none;
-
-  button {
-    background: transparent;
-    border: none;
-    cursor: pointer;
-
-    svg {
-      color: ${(props) => props.theme['green-300']};
-    }
-  }
-
-  @media (max-width: 940px) {
-    display: flex;
   }
 `

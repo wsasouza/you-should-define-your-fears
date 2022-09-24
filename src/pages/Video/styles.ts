@@ -7,4 +7,8 @@ export const VideoContainer = styled.main`
   padding: 2rem;
   background: ${(props) => props.theme['gray-700']};
   border-radius: 6px;
+
+  @media (max-width: 940px) {
+    padding: 2rem 1rem;
+  }
 `

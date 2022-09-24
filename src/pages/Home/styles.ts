@@ -9,6 +9,13 @@ export const HomeContainer = styled.main`
   background: ${(props) => props.theme['gray-700']};
   border-radius: 6px;
   gap: 2rem;
+
+  @media (max-width: 940px) {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 3rem;
+    margin-bottom: 2rem;
+  }
 `
 
 export const Text = styled.div`
@@ -55,6 +62,12 @@ export const Text = styled.div`
 
     &:hover::before {
       width: 1.5rem;
+    }
+  }
+
+  @media (max-width: 940px) {
+    h1 {
+      font-size: 2.6rem;
     }
   }
 `
