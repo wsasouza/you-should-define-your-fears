@@ -22,7 +22,7 @@ export function DefaultLayout() {
   return (
     <LayoutContainer>
       <Header scroll={activeColor} />
-      <Outlet />
+      <Outlet key={location.pathname} />
     </LayoutContainer>
   )
 }
