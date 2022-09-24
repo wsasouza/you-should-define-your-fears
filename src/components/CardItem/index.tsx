@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { ReactNode, useState } from 'react'
 import * as Dialog from '@radix-ui/react-dialog'
 import { format, formatDistanceToNow } from 'date-fns'
 import ptBR from 'date-fns/locale/pt-BR'
@@ -21,6 +21,7 @@ import {
 interface CardItemProps {
   item: ItemCard
   order: number
+  icon?: ReactNode
   removeCard: (id: string) => void
 }
 
