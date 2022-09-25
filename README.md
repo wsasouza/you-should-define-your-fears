@@ -88,9 +88,13 @@ $ cd you-should-define-your-fears
 
 # Install dependencies
 $ yarn
+or
+$ npm install
 
 # Run the project
 $ yarn dev
+or
+$ npm run dev
 
 # The server will initialize in the <http://localhost:5173>
 ```
