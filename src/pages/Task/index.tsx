@@ -1,15 +1,19 @@
+import React from 'react'
+import { NavLink, Outlet } from 'react-router-dom'
 import {
   NumberCircleOne,
   NumberCircleThree,
   NumberCircleTwo,
 } from 'phosphor-react'
-import { NavLink, Outlet } from 'react-router-dom'
+import { useAutoAnimate } from '@formkit/auto-animate/react'
 
 import { TaskContainer } from './styles'
 
 export function Task() {
+  const [animationParent] = useAutoAnimate()
+
   return (
-    <TaskContainer>
+    <TaskContainer ref={animationParent as React.RefObject<HTMLDivElement>}>
       <nav>
         <NavLink to="page-one">
           <span>Página</span>
