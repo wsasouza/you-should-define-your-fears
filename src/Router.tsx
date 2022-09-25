@@ -15,33 +15,13 @@ export function Router() {
       <Routes>
         <Route path="/" element={<DefaultLayout />}>
           <Route path="/" element={<Home />} />
-          <Route
-            key="biography"
-            path="biography"
-            element={<Biography key="biography" />}
-          />
-          <Route key="video" path="video" element={<Video key="video" />} />
-          <Route
-            key="article"
-            path="article"
-            element={<Article key="article" />}
-          />
-          <Route key="task" path="task" element={<Task key="task" />}>
-            <Route
-              key="page-one"
-              path="page-one"
-              element={<PageTaskOne key="page-one" />}
-            />
-            <Route
-              key="page-two"
-              path="page-two"
-              element={<PageTaskTwo key="page-two" />}
-            />
-            <Route
-              key="page-three"
-              path="page-three"
-              element={<PageTaskThree key="page-three" />}
-            />
+          <Route path="biography" element={<Biography />} />
+          <Route path="video" element={<Video />} />
+          <Route path="article" element={<Article />} />
+          <Route path="task" element={<Task />}>
+            <Route path="page-one" element={<PageTaskOne />} />
+            <Route path="page-two" element={<PageTaskTwo />} />
+            <Route path="page-three" element={<PageTaskThree />} />
           </Route>
         </Route>
       </Routes>
