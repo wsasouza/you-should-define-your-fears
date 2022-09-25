@@ -71,6 +71,7 @@ The following tools were used in this project:
 - [uuid](https://www.npmjs.com/package/uuid)
 - [Date-fns](https://date-fns.org/)
 - [React Toastify](https://www.npmjs.com/package/react-toastify)
+- [Auto Animate](https://auto-animate.formkit.com/)
 
 ## :white_check_mark: Requirements
 

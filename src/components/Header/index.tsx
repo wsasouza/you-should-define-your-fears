@@ -1,6 +1,8 @@
-import { Article, Brain, DotsThreeCircle, House, Play, X } from 'phosphor-react'
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
+import autoAnimate from '@formkit/auto-animate'
+import { Article, Brain, DotsThreeCircle, House, Play, X } from 'phosphor-react'
+
 import logo from '../../assets/code-logo-cz.svg'
 import { NavMobile } from '../NavMobile'
 
@@ -13,9 +15,14 @@ interface HeaderProps {
 export function Header({ scroll }: HeaderProps) {
   const [isOpen, setIsOpen] = useState(false)
   const toggle = () => setIsOpen(!isOpen)
+  const parent = useRef(null)
+
+  useEffect(() => {
+    parent.current && autoAnimate(parent.current)
+  }, [parent])
 
   return (
-    <HeaderContainer scroll={scroll}>
+    <HeaderContainer scroll={scroll} ref={parent}>
       <nav>
         <Link to="/" title="Home">
           <img src={logo} alt="" width={130} />
