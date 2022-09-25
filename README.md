@@ -22,11 +22,11 @@
 
 <!-- Status -->
 
-<h4 align="center"> 
-	🚧  
-  Bug🪲: Working to fix error Page 404 when refreshing ...  
+<!-- <h4 align="center">
+	🚧
+  Testing: Working to fix error Page 404 when refreshing ...
   🚧
-</h4>
+</h4> -->
 
 <hr>
 
