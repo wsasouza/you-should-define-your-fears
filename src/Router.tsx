@@ -8,6 +8,7 @@ import { Biography } from './pages/Biography'
 import { PageTaskOne } from './pages/PageTaskOne'
 import { PageTaskTwo } from './pages/PageTaskTwo'
 import { PageTaskThree } from './pages/PageTaskThree'
+import { Page404 } from './pages/Page404'
 
 export function Router() {
   return (
@@ -18,6 +19,7 @@ export function Router() {
           <Route path="biography" element={<Biography />} />
           <Route path="video" element={<Video />} />
           <Route path="article" element={<Article />} />
+          <Route path="*" element={<Page404 />} />
           <Route path="task" element={<Task />}>
             <Route path="page-one" element={<PageTaskOne />} />
             <Route path="page-two" element={<PageTaskTwo />} />
