@@ -40,7 +40,7 @@ export function Router() {
             <Route
               key="page-three"
               path="page-three"
-              element={<PageTaskThree key="page-two" />}
+              element={<PageTaskThree key="page-three" />}
             />
           </Route>
         </Route>
