@@ -1,5 +1,10 @@
 <div align="center" id="top"> 
-  <img src="./src/assets/demo.gif" alt="You Should Define Your Fears" />
+  <h1>Desktop</h1>
+  <img src="./src/assets/demo-desktop.gif" alt="You Should Define Your Fears" />
+  <br>
+  <br>
+  <h1>Responsive</h1>
+  <img src="./src/assets/demo-responsive.gif" alt="You Should Define Your Fears" />
 
 &#xa0;
 
