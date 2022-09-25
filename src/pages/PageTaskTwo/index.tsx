@@ -92,6 +92,7 @@ export function PageTaskTwo() {
               key={item.id}
               item={item}
               order={index + 1}
+              icon={<Asterisk size={32} />}
               removeCard={handleRemoveBenefitItem}
             />
           )

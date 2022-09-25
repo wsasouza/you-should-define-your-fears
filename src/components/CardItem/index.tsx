@@ -14,6 +14,7 @@ import {
   DialogAction,
   DialogContent,
   DialogDescription,
+  OrderDisplay,
   Overlay,
   Title,
 } from './styles'
@@ -25,7 +26,7 @@ interface CardItemProps {
   removeCard: (id: string) => void
 }
 
-export function CardItem({ item, order, removeCard }: CardItemProps) {
+export function CardItem({ item, order, icon, removeCard }: CardItemProps) {
   const [open, setOpen] = useState(false)
 
   const createdDateFormatted = format(
@@ -42,7 +43,10 @@ export function CardItem({ item, order, removeCard }: CardItemProps) {
   return (
     <CardItemContainer>
       <header>
-        <span>{order}</span>
+        <OrderDisplay>
+          <span>{order}</span>
+          {icon}
+        </OrderDisplay>
         <Dialog.Root open={open} onOpenChange={setOpen}>
           <Dialog.Trigger asChild>
             <button title="Apagar item">

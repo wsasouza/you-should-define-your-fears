@@ -182,6 +182,7 @@ export function PageTaskThree() {
                 key={item.id}
                 item={item}
                 order={index + 1}
+                icon={<HourglassHigh size={24} />}
                 removeCard={handleRemoveSixMonthsItem}
               />
             )
@@ -194,6 +195,7 @@ export function PageTaskThree() {
                 key={item.id}
                 item={item}
                 order={index + 1}
+                icon={<HourglassMedium size={24} />}
                 removeCard={handleRemoveOneYearItem}
               />
             )
@@ -206,6 +208,7 @@ export function PageTaskThree() {
                 key={item.id}
                 item={item}
                 order={index + 1}
+                icon={<HourglassLow size={24} />}
                 removeCard={handleRemoveThreeYearsItem}
               />
             )

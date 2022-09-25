@@ -174,6 +174,7 @@ export function PageTaskOne() {
                 key={item.id}
                 item={item}
                 order={index + 1}
+                icon={<Crosshair size={24} />}
                 removeCard={handleRemoveDefineItem}
               />
             )
@@ -186,6 +187,7 @@ export function PageTaskOne() {
                 key={item.id}
                 item={item}
                 order={index + 1}
+                icon={<Lifebuoy size={24} />}
                 removeCard={handleRemovePreventItem}
               />
             )
@@ -198,6 +200,7 @@ export function PageTaskOne() {
                 key={item.id}
                 item={item}
                 order={index + 1}
+                icon={<Bandaids size={24} />}
                 removeCard={handleRemoveRepairItem}
               />
             )

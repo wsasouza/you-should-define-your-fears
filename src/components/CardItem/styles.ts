@@ -18,20 +18,6 @@ export const CardItemContainer = styled.div`
     align-items: center;
     justify-content: space-between;
 
-    span {
-      font-size: 1.5rem;
-      font-family: 'Poppins' sans-serif;
-      color: ${(props) => props.theme['green-300']};
-
-      &::after {
-        content: '.';
-        display: inline-block;
-        font-size: 3rem;
-        line-height: 0.5rem;
-        color: ${(props) => props.theme['green-300']};
-      }
-    }
-
     button {
       background: transparent;
       border: none;
@@ -60,6 +46,29 @@ export const CardItemContainer = styled.div`
     display: flex;
     justify-content: flex-end;
     color: ${(props) => props.theme['gray-400']};
+  }
+`
+
+export const OrderDisplay = styled.div`
+  display: flex;
+  align-items: center;
+
+  span {
+    font-size: 1.5rem;
+    font-family: 'Poppins' sans-serif;
+    color: ${(props) => props.theme['green-300']};
+
+    &::after {
+      content: '.';
+      display: inline-block;
+      font-size: 3rem;
+      line-height: 0.5rem;
+      color: ${(props) => props.theme['green-300']};
+    }
+  }
+
+  svg {
+    color: ${(props) => props.theme['green-300']};
   }
 `
 
@@ -124,7 +133,7 @@ export const CancelButton = styled(Dialog.Close)`
   border-radius: 6px;
 
   &:hover {
-    background: ${(props) => props.theme['gray-700']};
+    background: ${(props) => props.theme['gray-600']};
     color: ${(props) => props.theme['pure-white']};
     transition: 0.5s;
   }
