@@ -7,7 +7,7 @@ export const PageTwoContainer = styled.main`
 
 export const TaskDisplay = styled.div`
   position: sticky;
-  top: 8rem;
+  top: 9.3rem;
   width: 100%;
 
   display: flex;

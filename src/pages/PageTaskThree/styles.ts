@@ -44,7 +44,7 @@ export const TaskThreeDisplay = styled.div`
 
 export const CardDisplayContainer = styled.div`
   position: sticky;
-  top: 8rem;
+  top: 9.3rem;
   width: 100%;
   display: flex;
   align-items: center;
