@@ -25,7 +25,7 @@ export function Header({ scroll }: HeaderProps) {
     <HeaderContainer scroll={scroll} ref={parent}>
       <nav>
         <Link to="/" title="Home">
-          <img src={logo} alt="" width={130} />
+          <img src={logo} alt="" width={200} />
         </Link>
         <HeaderMenu>
           <NavLink end to="/" title="Home">
